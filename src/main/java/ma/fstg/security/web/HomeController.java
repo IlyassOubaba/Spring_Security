@@ -2,28 +2,27 @@ package ma.fstg.security.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class HomeController {
 
     @GetMapping("/login")
-    public String loginPage() {
+    public String login() {
         return "login";
     }
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home() {
         return "home";
     }
 
-    @GetMapping("/user/dashboard")
-    public String userDashboard() {
-        return "user-dashboard"; // → templates/user-dashboard.html
-    }
-
     @GetMapping("/admin/dashboard")
     public String adminDashboard() {
-        return "admin-dashboard"; // → templates/admin-dashboard.html
+        return "admindashboard";
+    }
+
+    @GetMapping("/user/dashboard")
+    public String userDashboard() {
+        return "userdashboard";
     }
 }
